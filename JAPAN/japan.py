@@ -101,11 +101,9 @@ def reforge_imperfect_katana(imperfect_bp: str):
     new_blade_counts = []
     for idx, p_line in enumerate(perfect_blade, start=1):
         target_count = p_line.count('#')
-        # 显示为 [###] 的提示
         prompt_hint = '#' * target_count if target_count > 0 else ''
         while True:
             user_in = input(f"Line ({idx}/{total_lines}) [{prompt_hint}]: ").strip()
-            # 必须是整数
             try:
                 val = int(user_in)
             except ValueError:
